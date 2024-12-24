@@ -12,7 +12,7 @@ import { STATUS, STATUS_BE, TABLE, TIMESLOTS } from "@/constant/value";
 import dayjs from "dayjs";
 import { PATHS } from "@/constant/path";
 import { useMutation } from "@/hooks/useMutation";
-import ConfirmModal from "../../components/ConfirmModal/confirmModal";
+import ConfirmModal from "../../components/ConfirmModal/ConfirmModal";
 
 
 const AppointmentList = () => {
