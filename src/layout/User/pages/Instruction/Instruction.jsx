@@ -89,7 +89,7 @@ const Instruction = () => {
         <div className="instruction">
             <div className="user-guide">
                 <Title level={2} style={{ color: "#00B5F1" }}><strong>Hướng dẫn sử dụng</strong></Title>
-                <p>Hiện tại, website đang được triển khai phiên bản miễn phí nhằm giới thiệu sản phẩm, với một số tính năng hạn chế (chỉ hỗ trợ xem, chưa kích hoạt các chức năng thêm, xóa, chỉnh sửa). Kết nối backend có thể mất đến 2 phút để hoàn tất. Để trải nghiệm đầy đủ tính năng vui lòng truy cập repository GitHub.</p>
+                <p>Hiện tại, website đang được triển khai phiên bản miễn phí nhằm giới thiệu sản phẩm, với một số tính năng hạn chế. Kết nối backend có thể mất thời gian cho lần đầu tiên. Để trải nghiệm đầy đủ tính năng vui lòng truy cập repository GitHub.</p>
 
                 <Title level={4} style={{ color: "#00B5F1", marginTop: "40px" }}>
                     Các tài khoản đăng nhập vào hệ thống
