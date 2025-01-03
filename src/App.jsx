@@ -31,7 +31,7 @@ import Booking from "./layout/User/pages/Booking/Booking";
 import Cashier from "./layout/Receptionist/pages/Dashboard/cashier";
 import ParaclinicalList from "./layout/Receptionist/pages/Paraclinical";
 import Prescribe from "./layout/Receptionist/pages/Prescribe";
-import AppointmentList from "./layout/User/pages/AppointmentList/appoinmentList";
+import AppointmentList from "./layout/User/pages/AppointmentList/AppoinmentList";
 import ProfileUser from "./layout/User/pages/ProfileUser/ProfileUser";
 import BlogDetail from "./layout/User/pages/BlogDetail/BlogDetail";
 import AdminDashboard from "./layout/Admin/pages/Dashboard/AdminDashboard";
