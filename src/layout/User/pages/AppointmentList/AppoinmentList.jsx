@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import "./AppointmentList.scss";
+import "./AppoimentList.scss";
 import userService from "@/services/userService";
 import { message } from "antd";
 import { useEffect, useState } from "react";
@@ -12,7 +12,7 @@ import { STATUS, STATUS_BE, TABLE, TIMESLOTS } from "@/constant/value";
 import dayjs from "dayjs";
 import { PATHS } from "@/constant/path";
 import { useMutation } from "@/hooks/useMutation";
-import ConfirmModal from "../../components/ConfirmModal/ConfirmModal";
+import ConfirmModal from "../../components/ConfirmModal/confirmModal";
 
 
 const AppointmentList = () => {
@@ -144,7 +144,7 @@ const AppointmentList = () => {
                                     }
                                     {profile?.status === STATUS_BE.PENDING &&  //Chờ xác nhận}
                                         <>
-                                            {profile?.paymentId && +profile?.paymentDoctorStatus === +STATUS_BE.ACTIVE ?  //Đã thanh toán (tiền bác sĩ=1 và đã có mã thanh toán)
+                                            {profile?.paymentId ?  //Đã thanh toán (tiền bác sĩ=1 và đã có mã thanh toán)
                                                 <span className="status-success">Đã thanh toán</span>
                                                 :
                                                 <button className="btn checkout" onClick={() => { handleCheckOut(profile) }}>Thanh toán</button>

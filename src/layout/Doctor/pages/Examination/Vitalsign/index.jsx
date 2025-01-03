@@ -45,8 +45,8 @@ const VitalSign = ({ vitalSignData, examId, refresh }) => {
 
     //save button
     const handleSaveButton = async () => {
-        if (!formData.height || !formData.weight || !formData.fetalWeight || !formData.pulse || !formData.hightBloodPressure ||
-            !formData.lowBloodPressure || !formData.temperature || !formData.breathingRate || !formData.glycemicIndex) {
+        if (!formData.height || !formData.weight || !formData.pulse || !formData.hightBloodPressure ||
+            !formData.lowBloodPressure || !formData.temperature || !formData.breathingRate) {
             openNotification('Vui lòng điền đầy đủ tất cả các trường!', 'error');
             return;
         }
@@ -55,13 +55,13 @@ const VitalSign = ({ vitalSignData, examId, refresh }) => {
             examinationId: examId,
             height: formData.height,
             weight: formData.weight,
-            fetalWeight: formData.fetalWeight,
+            fetalWeight: formData.fetalWeight || null,
             pulse: formData.pulse,
             hightBloodPressure: formData.hightBloodPressure,
             lowBloodPressure: formData.lowBloodPressure,
             temperature: formData.temperature,
             breathingRate: formData.breathingRate,
-            glycemicIndex: formData.glycemicIndex
+            glycemicIndex: formData.glycemicIndex || null,
         }
 
         try {

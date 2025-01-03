@@ -4,17 +4,13 @@ import { formatCurrency } from '@/utils/formatCurrency';
 import { getThirdDigitFromLeft } from '@/utils/numberSeries';
 import { message } from 'antd';
 import { checkOutPrescription, updatePrescription } from '@/services/doctorService';
-import { STATUS_BE } from '@/constant/value';
-let optionRadio = {
-    cash: 'cash',
-    transfer: 'transfer'
-}
+import { PAYMENT_METHOD, STATUS_BE } from '@/constant/value';
 
 const PresModal = ({ isOpen, onClose, onSusscess, presId, patientData }) => {
     const [special, setSpecial] = useState('normal');
     const [insurance, setInsurance] = useState('');
     const [insuranceCoverage, setInsuranceCoverage] = useState(null);
-    let [paymentMethod, setPaymentMethod] = useState(optionRadio.cash);
+    let [paymentMethod, setPaymentMethod] = useState(PAYMENT_METHOD.CASH);
 
     const [data, setData] = useState({
         infouser: { firstName: '', lastName: '', cid: '' },
@@ -90,9 +86,8 @@ const PresModal = ({ isOpen, onClose, onSusscess, presId, patientData }) => {
                 }
             };
 
-            if (paymentMethod === optionRadio.cash) {
-                console.log('cash', presData);
-                const responseExam = await updatePrescription(presData);
+            if (paymentMethod === PAYMENT_METHOD.CASH) {
+                const responseExam = await updatePrescription({...presData, payment: paymentMethod});
                 if (responseExam.EC === 0 && responseExam.DT.includes(1)) {
                     message.success('Cập nhật đơn thuốc thành công!');
                     onSusscess();
@@ -276,9 +271,9 @@ const PresModal = ({ isOpen, onClose, onSusscess, presId, patientData }) => {
                                         <input
                                             className='radio'
                                             type="radio"
-                                            value={optionRadio.cash}
-                                            checked={paymentMethod === optionRadio.cash}
-                                            onChange={() => setPaymentMethod(optionRadio.cash)}
+                                            value={PAYMENT_METHOD.CASH}
+                                            checked={paymentMethod === PAYMENT_METHOD.CASH}
+                                            onChange={() => setPaymentMethod(PAYMENT_METHOD.CASH)}
                                         />
                                         Tiền mặt
                                     </label>
@@ -286,9 +281,9 @@ const PresModal = ({ isOpen, onClose, onSusscess, presId, patientData }) => {
                                         <input
                                             className='radio'
                                             type="radio"
-                                            value={optionRadio.transfer}
-                                            checked={paymentMethod === optionRadio.transfer}
-                                            onChange={() => setPaymentMethod(optionRadio.transfer)}
+                                            value={PAYMENT_METHOD.MOMO}
+                                            checked={paymentMethod === PAYMENT_METHOD.MOMO}
+                                            onChange={() => setPaymentMethod(PAYMENT_METHOD.MOMO)}
                                         />
                                         Chuyển khoản
                                     </label>

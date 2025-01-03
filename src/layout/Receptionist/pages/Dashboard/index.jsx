@@ -138,7 +138,6 @@ const ReceptionistDashboard = () => {
             setExamId(id);
             setIsEditMode(true);
             setPatientData(selectedPatient);
-            console.log("selectedPatient", selectedPatient);
             
             setIsModalOpen(true);
         } else {
@@ -347,7 +346,7 @@ const ReceptionistDashboard = () => {
                                         id={item.id}
                                         name={`${item.userExaminationData.lastName} ${item.userExaminationData.firstName}`}
                                         symptom={item.symptom}
-                                        special={'Triệu chứng: ' + item.special}
+                                        special={item.special}
                                         room={item.roomName}
                                         doctor={`${item.examinationStaffData.staffUserData.lastName} ${item.examinationStaffData.staffUserData.firstName}`}
                                         downItem={downItem}

@@ -32,8 +32,12 @@ const DoctorInfo = () => {
       setTotal(doctorData?.DT?.count || 0);
     }
   }, [doctorData]);
+  useEffect(() => {
+    if (doctorList.length < pageSize.pageSize) {
+      setPageSize({ ...pageSize, currentPage: 1 })
+    }
+  }, [doctorList]);
   let navigate = useNavigate();
-  console.log(doctorList);
   return (
     <div className={cx("doctor-info")}>
       <div className={cx("head-section")}>

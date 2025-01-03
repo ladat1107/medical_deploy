@@ -190,9 +190,9 @@ const Specialty = () => {
                                     <Col span={24}>
                                         <Form.Item
                                             name="shortDescription"
-                                            label="Giới thiệu"
+                                            label="Triệu chứng"
                                         >
-                                            <TextArea rows={5} placeholder="Giới thiệu về chuyên khoa" />
+                                            <TextArea rows={5} placeholder="Mô tả triệu chứng của chuyên khoa" />
                                         </Form.Item>
                                     </Col>
                                     <Col span={24}>

@@ -36,7 +36,7 @@ const DoctorDetailBody = (props) => {
                                 <div className={cx('blog-item-content')} >
                                     <div className={cx('content-title')} >
                                         <span></span>
-                                        <p>{item?.tags || "Tin y tế"}</p>
+                                        <p>{item?.tags?.split(",")[0] || "Tin y tế"}</p>
                                     </div>
                                     <p className={cx('body-content')} >{item?.shortDescription || "Mô tả ngắn"}</p>
                                     <div className={cx('date')} >

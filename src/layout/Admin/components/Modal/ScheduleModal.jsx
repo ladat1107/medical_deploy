@@ -89,7 +89,7 @@ const ScheduleModal = (props) => {
     return (
         <Modal
             name="scheduleModal"
-            title={<span style={{ color: primaryColorAdmin, fontSize: "1em" }}>Thêm lịch trực</span>}
+            title={<span>Thêm lịch trực</span>}
             open={props.open}
             onCancel={() => handleClose()}
             footer={[

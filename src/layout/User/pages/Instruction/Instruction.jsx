@@ -48,7 +48,7 @@ const Instruction = () => {
             key: "5",
             role: "Dược sĩ",
             description: "Xem đơn thuốc, thanh toán.",
-            email: "pharmarDuong@gmail.com",
+            email: "receptionist@gmail.com",
             password: "123456",
         },
         {
@@ -88,12 +88,10 @@ const Instruction = () => {
     return (
         <div className="instruction">
             <div className="user-guide">
-                <Title level={2} style={{ color: "#00B5F1" }}><strong>Hướng dẫn sử dụng</strong></Title>
-                <p>Hiện tại, website đang được triển khai phiên bản miễn phí nhằm giới thiệu sản phẩm, với một số tính năng hạn chế. Kết nối backend có thể mất thời gian cho lần đầu tiên. Để trải nghiệm đầy đủ tính năng vui lòng truy cập repository GitHub.</p>
-
-                <Title level={4} style={{ color: "#00B5F1", marginTop: "40px" }}>
+                <Title level={3} style={{ color: "#00B5F1" }}>
                     Các tài khoản đăng nhập vào hệ thống
                 </Title>
+                <p>Website hiện tại đang được triển khai miễn phí với một số tính năng bị hạn chế (chỉ có thể xem). Để trải nghiệm đầy đủ tính năng, vui lòng sử dụng source code từ GitHub.</p>
                 <Table columns={columns} dataSource={data} pagination={false} />
             </div>
         </div>

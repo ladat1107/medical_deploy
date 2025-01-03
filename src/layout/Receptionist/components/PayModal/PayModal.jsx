@@ -5,13 +5,10 @@ import { formatCurrency } from '@/utils/formatCurrency';
 import { getThirdDigitFromLeft } from '@/utils/numberSeries';
 import { checkOutExamination, checkOutParaclinical, updateExamination, updateListPayParaclinicals } from '@/services/doctorService';
 import './PayModal.scss';
-import { STATUS_BE } from '@/constant/value';
-let optionRadio = {
-    cash: 'cash',
-    transfer: 'transfer'
-}
+import { PAYMENT_METHOD, STATUS_BE } from '@/constant/value';
+
 const PayModal = ({ isOpen, onClose, onPaySusscess, examId, type, patientData }) => {
-    const [paymentMethod, setPaymentMethod] = useState(optionRadio.cash);
+    const [paymentMethod, setPaymentMethod] = useState(PAYMENT_METHOD.CASH);
     const [insurance, setInsurance] = useState('');
     const [insuranceCoverage, setInsuranceCoverage] = useState(null);
     const [special, setSpecial] = useState('normal');
@@ -89,7 +86,6 @@ const PayModal = ({ isOpen, onClose, onPaySusscess, examId, type, patientData })
     }, [isOpen]);
 
     const handlePay = async () => {
-
         try {
             let paymentData = {};
 
@@ -98,9 +94,10 @@ const PayModal = ({ isOpen, onClose, onPaySusscess, examId, type, patientData })
                     id: examId,
                     insuranceCoverage: insuranceCoverage || null,
                     insuaranceCode: insurance,
-                    status: 5
+                    status: STATUS_BE.PAID,
+                    payment: paymentMethod
                 };
-                if (paymentMethod === optionRadio.cash) {
+                if (paymentMethod === PAYMENT_METHOD.CASH) {
                     const response = await updateExamination(paymentData);
                     if (response.EC === 0 && response.DT.includes(1)) {
                         message.success('Cập nhật bệnh nhân thành công!');
@@ -122,7 +119,7 @@ const PayModal = ({ isOpen, onClose, onPaySusscess, examId, type, patientData })
             } else if (type === 'paraclinical') {
                 try {
                     const ids = patientData.paraclinicalItems.map(item => item.id);
-                    if (paymentMethod === optionRadio.cash) {
+                    if (paymentMethod === PAYMENT_METHOD.CASH) {
                         const response = await updateListPayParaclinicals({ ids });
 
                         if (response.EC === 0) {
@@ -317,9 +314,9 @@ const PayModal = ({ isOpen, onClose, onPaySusscess, examId, type, patientData })
                                         <input
                                             className='radio'
                                             type="radio"
-                                            value={optionRadio.cash}
-                                            checked={paymentMethod === optionRadio.cash}
-                                            onChange={() => setPaymentMethod(optionRadio.cash)}
+                                            value={PAYMENT_METHOD.CASH}
+                                            checked={paymentMethod === PAYMENT_METHOD.CASH}
+                                            onChange={() => setPaymentMethod(PAYMENT_METHOD.CASH)}
                                         />
                                         Tiền mặt
                                     </label>
@@ -327,9 +324,9 @@ const PayModal = ({ isOpen, onClose, onPaySusscess, examId, type, patientData })
                                         <input
                                             className='radio'
                                             type="radio"
-                                            value={optionRadio.transfer}
-                                            checked={paymentMethod === optionRadio.transfer}
-                                            onChange={() => setPaymentMethod(optionRadio.transfer)}
+                                            value={PAYMENT_METHOD.MOMO}
+                                            checked={paymentMethod === PAYMENT_METHOD.MOMO}
+                                            onChange={() => setPaymentMethod(PAYMENT_METHOD.MOMO)}
                                         />
                                         Chuyển khoản
                                     </label>

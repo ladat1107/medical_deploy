@@ -136,7 +136,7 @@ const BookingPersonal = (props) => {
             </div>
             <div className="content">
                 <div className="warning">
-                    <span >Vui lòng cung cấp thông tin chính xác để được phục vụ tốt nhất. Trong trường hợp cung cấp sai thông tin bệnh nhân & điện thoại, việc xác nhận cuộc hẹn sẽ không hiệu lực trước khi đặt khám.</span>
+                    <span >Vui lòng cung cấp thông tin chính xác để được phục vụ tốt nhất. Trong trường hợp cung cấp sai thông tin bệnh nhân & email, việc xác nhận cuộc hẹn sẽ không hiệu lực trước khi đặt khám.</span>
                 </div>
                 <div className="booking-personal p-3">
                     <Form

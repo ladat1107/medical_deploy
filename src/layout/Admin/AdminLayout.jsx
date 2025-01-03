@@ -56,7 +56,7 @@ const AdminLayout = () => {
                             <Outlet />
                         </Content>
                     </div>
-                    <AdminFooter />
+                    {/* <AdminFooter /> */}
                 </Layout>
             </Layout>
         </div >

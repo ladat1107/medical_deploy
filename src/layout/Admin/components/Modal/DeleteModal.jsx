@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { deleteUser, blockUser, deleteDepartment, blockDepartment, deleteServiceOfRoom, blockServiceOfRoom, deleteRoom, blockRoom, deleteSpecialty, blockSpecialty } from "@/services/adminService";
 import { Button, message, Modal } from "antd";
+import { primaryColorAdmin } from '@/style/variables';
 const DeleteModal = (props) => {
     let [messageContent, setMessageContent] = useState("")
     let data = props.data;
@@ -118,7 +119,7 @@ const DeleteModal = (props) => {
                     <Button key="cancel" onClick={() => handleClose()}>
                         Hủy
                     </Button>,
-                    <Button key="submit" style={{ background: "#F1B14D", color: "#ffffff", border: "none" }} onClick={() => handleLock()}>
+                    <Button key="submit" style={{ background: primaryColorAdmin, color: "#ffffff", border: "none" }} onClick={() => handleLock()}>
                         Khóa
                     </Button>,
                     <Button key="submit" style={{ background: "#f5222d", color: "#ffffff", border: "none" }} onClick={() => handleDelete()}>

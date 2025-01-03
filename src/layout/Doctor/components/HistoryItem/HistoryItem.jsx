@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import "./HistoryItem.scss";
 import { formatDate } from "@/utils/formatDate";
 
-const HistoryItem = ({id, data}) => {
+const HistoryItem = ({ id, data }) => {
     const [selectedRadio, setSelectedRadio] = useState(null);
 
     const handleRadioChange = (e) => {
@@ -19,7 +19,7 @@ const HistoryItem = ({id, data}) => {
         <>
             <div className="history-item-content row">
                 <div className="col-2 mt-4 text-center border-left" style={{ verticalAlign: 'top' }}>
-                    <p style={{fontWeight: '600', color: '#00B5F1'}}>{formatDate(data.admissionDate)}</p>
+                    <p style={{ fontWeight: '600', color: '#00B5F1' }}>{formatDate(data.admissionDate)}</p>
                 </div>
                 <div className="col-10 border-right">
                     <div className="row mt-4">
@@ -90,7 +90,7 @@ const HistoryItem = ({id, data}) => {
                                     ) : (
                                         <div className="mt-3" style={{ textAlign: 'start' }}>Không có thông tin sinh hiệu</div>
                                     )}
-                                    
+
                                 </div>
                             )}
                             {selectedRadio === `paraclinical + ${id}` && (
@@ -107,9 +107,11 @@ const HistoryItem = ({id, data}) => {
                                                     </div>
                                                     <div className="col-12 col-lg-8">
                                                         <p><strong>Hình ảnh: </strong>
+                                                        {item.image && 
                                                             <span 
                                                                 onClick={() => zoomImage(item.image)} 
-                                                                style={{ fontStyle: 'italic', textDecoration: 'underline', color: '#007BFF', cursor: 'pointer' }}>Nhấn để xem</span>
+                                                                style={{ fontStyle: 'italic', textDecoration: 'underline', color: '#007BFF', cursor: 'pointer' }}>Nhấn để xem
+                                                            </span>}
                                                         </p>
                                                     </div>
                                                     <div className="col-12 col-lg-12">
@@ -136,7 +138,7 @@ const HistoryItem = ({id, data}) => {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {data.prescriptionExamData[0]?.prescriptionDetails && data.prescriptionExamData[0]?.prescriptionDetails.map((item, index) => (
+                                                {data.prescriptionExamData[0]?.prescriptionDetails.map((item, index) => (
                                                     <tr key={index}>
                                                         <td style={cellStyle} >{item.name}</td>
                                                         <td style={cellStyle}>{item.PrescriptionDetail.quantity}</td>

@@ -224,7 +224,7 @@ const Room = () => {
                                                             </td>
                                                             <td className="text-center px-1 py-2">
                                                                 {item.bedQuantity > 0 ?
-                                                                    <div className="fw-normal"><b style={{ color: primaryColorAdmin }}>{item?.bedBusy || 0}</b> / {item?.bedQuantity || 0}</div>
+                                                                    <div className="fw-normal"><b style={{ color: primaryColorAdmin }}>{item?.bedFree || 0}</b> / {item?.bedQuantity || 0}</div>
                                                                     :
                                                                     <div>
                                                                         -

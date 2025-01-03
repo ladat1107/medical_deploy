@@ -13,7 +13,7 @@ const ConfirmModal = (props) => {
     }
     useEffect(() => {
         if (props.table === TABLE.EXAMINATION) {
-            if (data?.paymentId && data?.paymentDoctorStatus === +STATUS_BE.ACTIVE) {
+            if (data?.paymentId) {
                 setMessageContent(
                     "Lưu ý: <strong>Bạn đã thanh toán cho lịch hẹn này, xóa lịch hẹn sẽ được hoàn lại 80% số tiền đã thanh toán.</strong> <br />" +
                     "Xác nhận xóa lịch hẹn lúc " + TIMESLOTS[data?.time - 1]?.label +

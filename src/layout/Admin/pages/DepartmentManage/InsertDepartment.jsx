@@ -235,7 +235,7 @@ const InsertDepartment = (props) => {
                                     name="shortDescription"
                                     label="Giới thiệu"
                                 >
-                                    <TextArea rows={9} placeholder="Giới thiệu về chuyên khoa" />
+                                    <TextArea rows={9} placeholder="Mô tả về khoa" />
                                 </Form.Item>
                             </Col>
                             <Col sm={24}>

@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 const Dowload = () => {
   return (
     <div className={cx("dowload-wrapper")} style={{ margin: "120px 0" }}>
-      <h3 className="title-section">Tải ứng dụng Đặt khám nhanh Medpro</h3>
+      <h3 className="title-section">Tải ứng dụng Đặt khám nhanh</h3>
       <div className={cx("dowload")}>
         <div className={cx("center")}>
           <img

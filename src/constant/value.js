@@ -304,3 +304,8 @@ export const STATUS_BE = {
     ACTIVE: 1,
     INACTIVE: 0
 }
+export const PAYMENT_METHOD = {
+    MOMO: 1,
+    VN_PAY: 2,
+    CASH: 3
+}
